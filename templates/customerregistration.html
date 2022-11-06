@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}AddToCart {% endblock %}
+
+{% block content %}
+
+
+<style>
+    .errorlist {
+        color: red;
+    }
+</style>
+
+<br>
+<section class="vh-100" style="background-color: #2779e2;">
+    <div class="container py-5 h-100">
+           <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card-body p-5 text-center">
+                <h1 class="text-white mb-3"><u>Registration Form</u></h1>
+                <div class="card" style="border-radius: 10px;">
+                    <div class="card-body">
+                            <form action="" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">    
+                                <div class="form-outline">
+                                    {% csrf_token %}
+                                    {{form.as_p}}
+                                    <div class="mt-4 pt-2">
+                                        <button class="btn btn-primary">Register</button>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                            </form>
+                        <p class="text-center text-muted mt-5 mb-0">already have an account? <a
+                                href="{% url 'ecomapp:customerlogin'%}" class="fw-bold text-body"><u>Login
+                                    here</u></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
